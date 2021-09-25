@@ -1,0 +1,31 @@
+
+{"nodes" : {
+    "start" : {"prompt" : "HCW1: hey, your uncle's condition suddenly got worse while you were away at work. He passed away today peacefully at 12:45.",
+        "choices" : [
+            { "label" : "What? How could this have happened, it seemed like he was doing fine.",
+                "destination" : "sometimesHappens" },
+            {"label" : "Oh no! what happens now?" ,
+                "destination" : "duties"
+            }
+        ]
+    },
+    "sometimesHappens" : {
+        "prompt" : "It just happens like this sometimes unfortunately, I'm sorry for your loss.",
+        "choices" : [
+            {"label" : "What happens next?" ,
+                "destination" : "duties"
+            }
+        ]
+    },
+    
+    "duties" : {
+        "prompt" : "Now, you will have to have a funeral, and considering your uncle was quite wealthy, I think the reading of the will will also be of interest to everyone who was close to him.",
+        "choices" : [
+            {"label" : "Okay, thanks for letting me know",
+                "destination" : "end"
+            },
+            {"label" : "I don't care about the money, nothing can replace uncle!", "destination" : "end"}
+        ]
+    }
+}
+}
