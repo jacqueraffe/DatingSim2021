@@ -11,7 +11,16 @@ struct ConversationView: View {
     @StateObject private var conversationModel = ConversationModel(conversationName: "Chapter1")
     
     var body: some View {
-        Text(conversationModel.currentNode.prompt)
+        let node = conversationModel.currentNode
+        Text(node.prompt)
+        let choices = node.choices
+        ForEach(node.choices) { choice in
+            Button(choice.label){
+                //find which choice the user chose
+                let offset = choices.firstIndex{$0.label == choice.label}!
+                conversationModel.pick(choice: offset)
+            }
+        }
     }
 }
 

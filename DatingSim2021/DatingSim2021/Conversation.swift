@@ -12,7 +12,7 @@ struct Conversation : Codable {
     // tag is the name of a conversation node aka a chapter
     typealias Tag = String
     // a single user's choice
-    struct Choice : Codable{
+    struct Choice : Codable {
         //what the user will see as a choice
         var label : String
         // name of the node to go to if the user clicks this choice
@@ -33,3 +33,9 @@ struct Conversation : Codable {
     static let end : Tag = "end"
 }
 
+// the way you can tell different conversations apart is by their label
+extension Conversation.Choice : Identifiable {
+    var id: String{
+        label
+    }
+}

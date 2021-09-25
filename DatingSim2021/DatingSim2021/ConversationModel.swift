@@ -20,7 +20,8 @@ class ConversationModel : ObservableObject {
     private var conversation : Conversation
     func pick(choice : Int) {
         // go to the next node in the graph
-        currentNode = conversation.nodes[currentNode.choices[choice].label]!
+        let destination = currentNode.choices[choice].destination
+        currentNode = conversation.nodes[destination]!
     }
 }
 
