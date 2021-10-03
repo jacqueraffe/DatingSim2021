@@ -20,9 +20,16 @@ struct ConversationView: View {
     //history node: keeps track of choices, add choices that are made when it's redrawn display the previous choices that have already been chosen
     var body: some View {
         //scrollable list, history nodes
-        ScrollView{
-            history
-            current
+        ScrollViewReader { value in
+            ScrollView{
+                history
+                current.id("current")
+            }
+            .onChange(of: conversationModel.history.count) {_ in
+                withAnimation {
+                    value.scrollTo("current", anchor: .center)
+                }
+            }
         }
     }
     
