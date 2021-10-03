@@ -10,6 +10,7 @@
 		4F067A622709427F000369E9 /* ChaptersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F067A612709427F000369E9 /* ChaptersModel.swift */; };
 		4F067A662709466C000369E9 /* ChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F067A652709466C000369E9 /* ChaptersView.swift */; };
 		4F067A6827094828000369E9 /* ChapterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F067A6727094828000369E9 /* ChapterRow.swift */; };
+		4F067A6A27094F50000369E9 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F067A6927094F50000369E9 /* ChatBubble.swift */; };
 		4F8E64EF2702337E006BE92E /* Chapter2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F8E64EE2702337E006BE92E /* Chapter2.json */; };
 		4FCB7EBC26FFD7F800B99F76 /* DatingSim2021App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB7EBB26FFD7F800B99F76 /* DatingSim2021App.swift */; };
 		4FCB7EBE26FFD7F800B99F76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB7EBD26FFD7F800B99F76 /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 		4F067A612709427F000369E9 /* ChaptersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersModel.swift; sourceTree = "<group>"; };
 		4F067A652709466C000369E9 /* ChaptersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersView.swift; sourceTree = "<group>"; };
 		4F067A6727094828000369E9 /* ChapterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterRow.swift; sourceTree = "<group>"; };
+		4F067A6927094F50000369E9 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		4F8E64EE2702337E006BE92E /* Chapter2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Chapter2.json; sourceTree = "<group>"; };
 		4FCB7EB826FFD7F800B99F76 /* DatingSim2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingSim2021.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCB7EBB26FFD7F800B99F76 /* DatingSim2021App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingSim2021App.swift; sourceTree = "<group>"; };
@@ -67,18 +69,19 @@
 		4FCB7EBA26FFD7F800B99F76 /* DatingSim2021 */ = {
 			isa = PBXGroup;
 			children = (
-				4FCB7EBB26FFD7F800B99F76 /* DatingSim2021App.swift */,
-				4FCB7EBD26FFD7F800B99F76 /* ContentView.swift */,
-				4F067A612709427F000369E9 /* ChaptersModel.swift */,
+				4FCB7EBF26FFD7F800B99F76 /* Assets.xcassets */,
+				4FCB7ECB26FFDB6100B99F76 /* Chapter1.json */,
+				4F8E64EE2702337E006BE92E /* Chapter2.json */,
 				4F067A6727094828000369E9 /* ChapterRow.swift */,
+				4F067A612709427F000369E9 /* ChaptersModel.swift */,
 				4F067A652709466C000369E9 /* ChaptersView.swift */,
+				4F067A6927094F50000369E9 /* ChatBubble.swift */,
+				4FCB7EBD26FFD7F800B99F76 /* ContentView.swift */,
 				4FCB7EC926FFD85E00B99F76 /* Conversation.swift */,
 				4FCB7ECD26FFDEF300B99F76 /* ConversationModel.swift */,
 				4FCB7ECF26FFE28F00B99F76 /* ConversationView.swift */,
-				4FCB7EBF26FFD7F800B99F76 /* Assets.xcassets */,
+				4FCB7EBB26FFD7F800B99F76 /* DatingSim2021App.swift */,
 				4FCB7EC126FFD7F800B99F76 /* Preview Content */,
-				4FCB7ECB26FFDB6100B99F76 /* Chapter1.json */,
-				4F8E64EE2702337E006BE92E /* Chapter2.json */,
 			);
 			path = DatingSim2021;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				4FCB7EBE26FFD7F800B99F76 /* ContentView.swift in Sources */,
 				4FCB7ECE26FFDEF300B99F76 /* ConversationModel.swift in Sources */,
 				4FCB7EBC26FFD7F800B99F76 /* DatingSim2021App.swift in Sources */,
+				4F067A6A27094F50000369E9 /* ChatBubble.swift in Sources */,
 				4FCB7ED026FFE28F00B99F76 /* ConversationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,15 +20,26 @@ struct ConversationView: View {
     //history node: keeps track of choices, add choices that are made when it's redrawn display the previous choices that have already been chosen
     var body: some View {
         //scrollable list, history nodes
+        ScrollView{
+            history
+            current
+        }
+    }
+    
+    @ViewBuilder
+    private var history: some View{
+        ForEach(conversationModel.history ){exchange in
+            VStack{
+                ChatBubble(text: exchange.prompt)
+                ChatBubble(text: exchange.choiceLabel)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var current: some View{
         let node = conversationModel.currentNode
-        Text(node.prompt)
-            .fontWeight(.bold)
-                .font(.title)
-                .padding()
-                .background(Color.blue)
-                .cornerRadius(40)
-                .foregroundColor(.white)
-                .padding(10)
+        ChatBubble(text: node.prompt)
         let choices = node.choices
         ForEach(node.choices) { choice in
             Button(choice.label){

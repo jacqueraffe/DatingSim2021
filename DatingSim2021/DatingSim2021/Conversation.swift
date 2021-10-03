@@ -32,6 +32,13 @@ struct Conversation : Codable {
     static let start : Tag = "start"
     // end node
     static let end : Tag = "end"
+    
+    typealias History = [Exchange]
+    struct Exchange : Identifiable {
+        var id : Int
+        var prompt : String
+        var choiceLabel : String
+    }
 }
 
 // the way you can tell different conversations apart is by their label
