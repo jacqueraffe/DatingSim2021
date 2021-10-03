@@ -18,9 +18,12 @@ class ConversationModel : ObservableObject {
     @Published
     var currentNode : Conversation.Node
     private var conversation : Conversation
+    //keep track of nodes that I've gone through
     func pick(choice : Int) {
         // go to the next node in the graph
         let destination = currentNode.choices[choice].destination
+        //history is an array, take curr node, add to history
+        //earasing info, so good place to update history node
         currentNode = conversation.nodes[destination]!
     }
 }

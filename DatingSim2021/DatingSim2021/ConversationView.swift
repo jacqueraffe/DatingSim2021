@@ -3,15 +3,23 @@
 //  DatingSim2021
 //
 //  Created by Jacqueline Palevich on 9/25/21.
+//TO DO:
+//  chapters list view, can't change answers
+//  write some more chapters
+//  add scoring system
 //
 
 import SwiftUI
 
 struct ConversationView: View {
     
-    @StateObject private var conversationModel = ConversationModel(conversationName: "Chapter2")
-    
+    @StateObject private var conversationModel : ConversationModel
+    init(conversationName: String) {
+        _conversationModel = StateObject(wrappedValue: ConversationModel(conversationName: conversationName))
+    }
+    //history node: keeps track of choices, add choices that are made when it's redrawn display the previous choices that have already been chosen
     var body: some View {
+        //scrollable list, history nodes
         let node = conversationModel.currentNode
         Text(node.prompt)
             .fontWeight(.bold)
@@ -33,11 +41,5 @@ struct ConversationView: View {
             .foregroundColor(.white)
             .font(.title)
         }
-    }
-}
-
-struct ConversationView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConversationView()
     }
 }
