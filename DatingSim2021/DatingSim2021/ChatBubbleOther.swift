@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChatBubble: View {
+struct ChatBubbleOther: View {
     var text : String
     var body: some View {
         Text(text)
