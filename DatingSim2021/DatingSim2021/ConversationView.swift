@@ -12,10 +12,13 @@
 import SwiftUI
 
 struct ConversationView: View {
+    @Binding var gameState : GameState
     @StateObject private var conversationModel : ConversationModel
-    init(conversationName: String) {
+    init(conversationName: String, gameState : Binding<GameState>) {
+        self._gameState = gameState
         _conversationModel = StateObject(wrappedValue: ConversationModel(conversationName: conversationName))
     }
+    
     //history node: keeps track of choices, add choices that are made when it's redrawn display the previous choices that have already been chosen
     var body: some View {
         //scrollable list, history nodes
@@ -28,6 +31,9 @@ struct ConversationView: View {
                 withAnimation {
                     value.scrollTo("current", anchor: .center)
                 }
+            }
+            .onChange(of: conversationModel.ended) {_ in
+                gameState.level += 1
             }
         }
     }

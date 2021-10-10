@@ -21,4 +21,8 @@ public struct GameState : Codable {
         aspen = 0
         evan = 0
     }
+    
+    mutating func nextLevel() {
+        level += 1
+    }
 }

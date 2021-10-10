@@ -21,15 +21,15 @@
     "later" :{"prompt" : "A half an hour later... Lawyer: I hereby nominate, constitute and appoint my beloved niece, Y/N, to act as the Executor of this my Last Will and Testament on the condition she gets married before receiving the money. In the event that Y/N shall predecease me or chooses not to act for any reason, I  nominate and appoint (Lawyer) to donate my money in the ways that I already have outlined to him. And considering Y/N is still alive, I'm assuming that you will take on the money?",
         "choices" : [
         {"label": "I guess... But what was the condition again?",
-            "destination" : "end"},
+            "destination" : "wish"},
         {"label" : "What kind of condition is needing to be married? Can he even do that?",
-            "destination" : "end"}
+            "destination" : "wish"}
         ]
     },
-    "end" : {"prompt": "Lawyer: Your Uncle's dying wish is that you wouldn't spend life lonely like him. He also wants you to have someone who can help you manage the money.",
+    "wish" : {"prompt": "Lawyer: Your Uncle's dying wish is that you wouldn't spend life lonely like him. He also wants you to have someone who can help you manage the money.",
         "choices" : [
             {"label" : "Wow, he must've been really lonely then",
-                "destination" : "null"}
+                "destination" : "end"}
         ]
     }
     

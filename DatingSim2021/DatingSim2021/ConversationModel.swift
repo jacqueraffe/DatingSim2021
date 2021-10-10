@@ -14,6 +14,9 @@ class ConversationModel : ObservableObject {
     @Published
     var history : Conversation.History
     
+    @Published
+    var ended : Bool
+    
     private var conversation : Conversation
     
     // initializes the conversation model by getting data from the json of the chapter the user is on
@@ -23,6 +26,7 @@ class ConversationModel : ObservableObject {
                                                            from: data)
         currentNode = conversation.nodes[Conversation.start]!
         history = []
+        ended = false
     }
     
     //keep track of nodes that I've gone through
@@ -32,7 +36,11 @@ class ConversationModel : ObservableObject {
         //history is an array, take curr node, add to history
         //erasing info, so good place to update history node
         history.append(Conversation.Exchange(id: history.count, prompt: currentNode.prompt, choiceLabel: currentNode.choices[choice].label))
-        currentNode = conversation.nodes[destination]!
+        if destination == Conversation.end {
+            ended = true
+        } else {
+            currentNode = conversation.nodes[destination]!
+        }
     }
 }
 
