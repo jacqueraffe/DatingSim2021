@@ -11,6 +11,5 @@ struct ChapterRow: View {
     var chapterName: String
     var body: some View {
         Text(chapterName)
-        
     }
 }

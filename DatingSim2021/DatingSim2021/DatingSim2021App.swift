@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct DatingSim2021App: App {
+    
+    @StateObject private var gameModel = GameModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(gameState : $gameModel.gameState){ gameModel.save() }
+                .onAppear{
+                    gameModel.load()
+                }
+            
         }
     }
 }

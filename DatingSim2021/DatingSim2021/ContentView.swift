@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Binding var gameState : GameState
+    @Environment(\.scenePhase) private var scenePhase
+    let saveAction: () -> Void
+    
     var body: some View {
         NavigationView{
-            ChaptersView()
+            ChaptersView(gameState : $gameState)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
 }

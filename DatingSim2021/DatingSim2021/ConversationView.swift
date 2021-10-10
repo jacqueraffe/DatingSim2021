@@ -12,7 +12,6 @@
 import SwiftUI
 
 struct ConversationView: View {
-    
     @StateObject private var conversationModel : ConversationModel
     init(conversationName: String) {
         _conversationModel = StateObject(wrappedValue: ConversationModel(conversationName: conversationName))

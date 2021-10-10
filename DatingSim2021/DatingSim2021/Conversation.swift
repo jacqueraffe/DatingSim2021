@@ -39,6 +39,7 @@ struct Conversation : Codable {
         var prompt : String
         var choiceLabel : String
     }
+
 }
 
 // the way you can tell different conversations apart is by their label
