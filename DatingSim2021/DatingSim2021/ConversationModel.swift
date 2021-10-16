@@ -7,40 +7,34 @@
 
 import Foundation
 
-class ConversationModel : ObservableObject {
-    @Published
-    var currentNode : Conversation.Node
+public class ConversationModel : ObservableObject {
+    var gameModel : GameModel
     
-    @Published
-    var history : Conversation.History
-    
-    @Published
-    var ended : Bool
+    var currentNode : Conversation.Node? {
+        conversation.nodes[gameModel.gameState.currentConversation.currentNodeTag]
+    }
     
     private var conversation : Conversation
     
     // initializes the conversation model by getting data from the json of the chapter the user is on
-    public init(conversationName : String) {
+    public init(gameModel : GameModel) {
+        let conversationName = gameModel.gameState.currentChapterName
         let data = readLocalFile(forName: conversationName)!
         conversation = try! JSONDecoder().decode(Conversation.self,
                                                            from: data)
-        currentNode = conversation.nodes[Conversation.start]!
-        history = []
-        ended = false
+        self.gameModel = gameModel
+        
     }
     
     //keep track of nodes that I've gone through
     func pick(choice : Int) {
         // go to the next node in the graph
+        let currentNode = conversation.nodes[gameModel.gameState.currentConversation.currentNodeTag]!
         let destination = currentNode.choices[choice].destination
         //history is an array, take curr node, add to history
         //erasing info, so good place to update history node
-        history.append(Conversation.Exchange(id: history.count, prompt: currentNode.prompt, choiceLabel: currentNode.choices[choice].label))
-        if destination == Conversation.end {
-            ended = true
-        } else {
-            currentNode = conversation.nodes[destination]!
-        }
+        gameModel.gameState.currentConversation.history.append(Conversation.Exchange(id: gameModel.gameState.currentConversation.history.count, prompt: currentNode.prompt, choiceLabel: currentNode.choices[choice].label))
+        gameModel.gameState.currentConversation.currentNodeTag = destination
     }
 }
 

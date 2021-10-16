@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @Binding var gameState : GameState
+    @ObservedObject var gameModel : GameModel
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: () -> Void
     
     var body: some View {
         NavigationView{
-            ChaptersView(gameState : $gameState)
+            ChaptersView(gameModel : gameModel)
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }

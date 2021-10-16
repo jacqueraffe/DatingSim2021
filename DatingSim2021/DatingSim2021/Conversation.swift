@@ -34,7 +34,7 @@ struct Conversation : Codable {
     static let end : Tag = "end"
     
     typealias History = [Exchange]
-    struct Exchange : Identifiable {
+    struct Exchange : Identifiable, Codable, Equatable {
         var id : Int
         var prompt : String
         var choiceLabel : String

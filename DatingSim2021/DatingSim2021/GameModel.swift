@@ -28,8 +28,12 @@ public class GameModel : ObservableObject {
     @Published
     public var gameState : GameState
     
+    @Published
+    public var conversationModel : ConversationModel?
+    
     public init (){
         gameState = GameState()
+        conversationModel = nil
     }
     
     func load() {
@@ -42,6 +46,7 @@ public class GameModel : ObservableObject {
             }
             DispatchQueue.main.async {
                 self?.gameState = gameState
+                self?.conversationModel = ConversationModel(gameModel: self!)
             }
         }
     }

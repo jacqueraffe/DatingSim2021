@@ -8,23 +8,35 @@
 import SwiftUI
 
 struct ChaptersView: View {
-    @Binding var gameState : GameState
+    @ObservedObject
+    var gameModel : GameModel
     @StateObject private var chapters = ChaptersModel(chapters: [
         "Chapter1", "Chapter2"])
     @State private var selection: String? = nil
     var body: some View {
         VStack{
-            GameStateView(gameState: gameState)
-            //chapter's are identified by their name
+            GameStateView(gameState: gameModel.gameState)
+            //chapters are identified by their name
             //TODO: prevent people from getting to unplayed chapter
-            List(chapters.chapters, id: \.self){ chapter in
-                NavigationLink(destination: ConversationView(conversationName: chapter, gameState: $gameState),
-                               tag: chapter, selection:$selection) {
+            List(Array(chapters.chapters.enumerated()), id: \.1){ level, chapter in
+                NavigationLink(destination: chapterView(of: level)) {
                     ChapterRow(chapterName: chapter)
                 }
             }
-        }.onChange(of: gameState.level){ newLevel in
+        }.onChange(of: gameModel.gameState.level){ newLevel in
             selection = chapters.chapters[newLevel]
+        }
+    }
+    
+    @ViewBuilder
+    func chapterView(of level : Int) -> some View{
+        if level < gameModel.gameState.level {
+            ReView(history: gameModel.gameState.history[level])
+        } else if level == gameModel.gameState.level{
+            let chapter = chapters.chapters[level]
+            ConversationView(conversationName: chapter, gameModel: gameModel)
+        } else {
+            Text("Not yet")
         }
     }
 }

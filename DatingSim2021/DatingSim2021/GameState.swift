@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct GameState : Codable {
+public struct GameState : Codable, Equatable {
     //levels completed
     var level : Int
     //affection points for each character
@@ -15,14 +15,26 @@ public struct GameState : Codable {
     var aspen : Int
     var evan : Int
     
+    //chapter history
+    var history: [Conversation.History]
+    var currentConversation: ConversationState
+    
+    var currentChapterName: String {
+        "Chapter\(level+1)"
+    }
+    
     public init() {
         level = 0
         sean = 0
         aspen = 0
         evan = 0
+        history = []
+        currentConversation = ConversationState()
     }
     
     mutating func nextLevel() {
+        history.append(currentConversation.history)
+        currentConversation = ConversationState()
         level += 1
     }
 }
