@@ -10,17 +10,15 @@ public class ChaptersModel: ObservableObject {
     @Published // when this value changes a notifcation will be sent to all observers automatically
     var currentChapter : String?
     
-    @Published var chapterMap : NextChapterMap
-    
     var chapters: [String]
     
     init(chapters: [String]) {
         self.chapters = chapters
         currentChapter = chapters.first
         
-        let data = readLocalFile(forName: "ChapterMap")!
-        chapterMap = try! JSONDecoder().decode(NextChapterMap.self, from: data)
+        
     }
+    
     
     public var currentChapterIndex : Int? {
         get{

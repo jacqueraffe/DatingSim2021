@@ -33,7 +33,7 @@ struct ConversationView: View {
                     value.scrollTo("current", anchor: .center)
                 }
                 if conversationModel.gameModel.gameState.currentConversation.ended {
-                    gameModel.gameState.nextLevel()
+                    gameModel.goToNextChapter()
                 }
             }
         }

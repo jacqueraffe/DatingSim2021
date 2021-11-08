@@ -9,6 +9,7 @@ import Foundation
 
 public class GameModel : ObservableObject {
     
+    
     private static var documentsFolder: URL {
         do {
             return try FileManager.default.url(for: .documentDirectory,
@@ -30,9 +31,14 @@ public class GameModel : ObservableObject {
     @Published
     public var conversationModel : ConversationModel?
     
+    @Published var chapterMap : NextChapterMap
+    
     public init (){
         gameState = GameState()
         conversationModel = nil
+        
+        let data = readLocalFile(forName: "ChapterMap")!
+        chapterMap = try! JSONDecoder().decode(NextChapterMap.self, from: data)
     }
     
     func load() {
@@ -55,6 +61,21 @@ public class GameModel : ObservableObject {
                 try data.write(to: outfile)
             } catch {
                 fatalError("Can't write to file")
+            }
+        }
+    }
+    
+    public func goToNextChapter(){
+        gameState.visitedChapters.insert(gameState.chapter)
+        gameState.history[gameState.chapter] = gameState.currentConversation.history
+        let nextChapters = chapterMap[gameState.chapter]!
+        for nextChapter in nextChapters {
+            if gameState.sean >= nextChapter.seanMin &&
+                gameState.aspen >= nextChapter.aspenMin &&
+                gameState.evan >= nextChapter.evanMin {
+                gameState.chapter = nextChapter.nextChapterName
+                gameState.currentConversation = ConversationState()
+                return
             }
         }
     }

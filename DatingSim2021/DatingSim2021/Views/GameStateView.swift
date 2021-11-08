@@ -12,7 +12,7 @@ public struct GameStateView : View {
     let gameState : GameState
     public var body : some View {
         HStack{
-            Text("level: \(gameState.level)")
+            Text("Chapter: \(gameState.chapter)")
             Text("Sean: \(gameState.sean)")
             Text("Evan: \(gameState.evan)")
             Text("Aspen: \(gameState.aspen)")

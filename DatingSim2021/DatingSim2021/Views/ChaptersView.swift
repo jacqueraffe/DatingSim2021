@@ -17,24 +17,22 @@ struct ChaptersView: View {
         VStack{
             GameStateView(gameState: gameModel.gameState)
             //chapters are identified by their name
-            //TODO: prevent people from getting to unplayed chapter
-            List(Array(chapters.chapters.enumerated()), id: \.1){ level, chapter in
-                NavigationLink(destination: chapterView(of: level)) {
+            List(chapters.chapters, id: \.self){ chapter in
+                NavigationLink(destination: chapterView(of: chapter)) {
                     ChapterRow(chapterName: chapter)
                 }
             }
-        }.onChange(of: gameModel.gameState.level){ newLevel in
-            selection = chapters.chapters[newLevel]
+        }.onChange(of: gameModel.gameState.chapter){ chapter in
+            selection = chapter
         }
     }
     
     @ViewBuilder
-    func chapterView(of level : Int) -> some View{
-        if level < gameModel.gameState.level {
-            ReView(history: gameModel.gameState.history[level])
-        } else if level == gameModel.gameState.level{
-            let chapter = chapters.chapters[level]
+    func chapterView(of chapter : String) -> some View{
+        if chapter == gameModel.gameState.chapter{
             ConversationView(conversationName: chapter, gameModel: gameModel)
+        } else if gameModel.gameState.visitedChapters.contains(chapter) {
+            ReView(history: gameModel.gameState.history[chapter]!)
         } else {
             Text("Not yet")
         }

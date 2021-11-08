@@ -8,33 +8,29 @@
 import Foundation
 
 public struct GameState : Codable, Equatable {
-    //levels completed
-    var level : Int
+    //curr Chapter
+    var chapter : String
     //affection points for each character
     var sean : Int
     var aspen : Int
     var evan : Int
-    
+    //visited chapters
+    var visitedChapters : Set<String>
     //chapter history
-    var history: [Conversation.History]
+    var history : [String: Conversation.History]
     var currentConversation: ConversationState
     
     var currentChapterName: String {
-        "Chapter\(level+1)"
+        chapter
     }
     
     public init() {
-        level = 0
+        chapter = "Chapter1"
         sean = 0
         aspen = 0
         evan = 0
-        history = []
+        history = [:]
         currentConversation = ConversationState()
-    }
-    
-    mutating func nextLevel() {
-        history.append(currentConversation.history)
-        currentConversation = ConversationState()
-        level += 1
+        visitedChapters = Set<String>()
     }
 }
