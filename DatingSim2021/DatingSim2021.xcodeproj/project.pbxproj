@@ -26,6 +26,13 @@
 		4FCB7ECC26FFDB6100B99F76 /* Chapter1.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCB7ECB26FFDB6100B99F76 /* Chapter1.json */; };
 		4FCB7ECE26FFDEF300B99F76 /* ConversationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB7ECD26FFDEF300B99F76 /* ConversationModel.swift */; };
 		4FCB7ED026FFE28F00B99F76 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB7ECF26FFE28F00B99F76 /* ConversationView.swift */; };
+		4FCBD58E2738B77000137BFD /* NextChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCBD58D2738B77000137BFD /* NextChapter.swift */; };
+		4FCBD5902738B86F00137BFD /* ChapterMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCBD58F2738B86F00137BFD /* ChapterMap.json */; };
+		4FCBD5932738B96A00137BFD /* Chapter3.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCBD5922738B96A00137BFD /* Chapter3.json */; };
+		4FCBD5952738BAF600137BFD /* SeanWin.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCBD5942738BAF600137BFD /* SeanWin.json */; };
+		4FCBD5972738BB0300137BFD /* AspenWin.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCBD5962738BB0300137BFD /* AspenWin.json */; };
+		4FCBD5992738BB1000137BFD /* EvanWin.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCBD5982738BB1000137BFD /* EvanWin.json */; };
+		4FCBD59B2738BC1A00137BFD /* Lose.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCBD59A2738BC1A00137BFD /* Lose.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,13 @@
 		4FCB7ECB26FFDB6100B99F76 /* Chapter1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Chapter1.json; sourceTree = "<group>"; };
 		4FCB7ECD26FFDEF300B99F76 /* ConversationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationModel.swift; sourceTree = "<group>"; };
 		4FCB7ECF26FFE28F00B99F76 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
+		4FCBD58D2738B77000137BFD /* NextChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChapter.swift; sourceTree = "<group>"; };
+		4FCBD58F2738B86F00137BFD /* ChapterMap.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ChapterMap.json; sourceTree = "<group>"; };
+		4FCBD5922738B96A00137BFD /* Chapter3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Chapter3.json; sourceTree = "<group>"; };
+		4FCBD5942738BAF600137BFD /* SeanWin.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeanWin.json; sourceTree = "<group>"; };
+		4FCBD5962738BB0300137BFD /* AspenWin.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AspenWin.json; sourceTree = "<group>"; };
+		4FCBD5982738BB1000137BFD /* EvanWin.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EvanWin.json; sourceTree = "<group>"; };
+		4FCBD59A2738BC1A00137BFD /* Lose.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Lose.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,25 +95,11 @@
 		4FCB7EBA26FFD7F800B99F76 /* DatingSim2021 */ = {
 			isa = PBXGroup;
 			children = (
+				4FCBD59E2738BD2A00137BFD /* Model */,
+				4FCBD59D2738BCD600137BFD /* Views */,
+				4FCBD59C2738BC7400137BFD /* Chapters */,
 				4FCB7EBF26FFD7F800B99F76 /* Assets.xcassets */,
-				4FCB7ECB26FFDB6100B99F76 /* Chapter1.json */,
-				4F8E64EE2702337E006BE92E /* Chapter2.json */,
-				4F067A6727094828000369E9 /* ChapterRow.swift */,
-				4F067A612709427F000369E9 /* ChaptersModel.swift */,
-				4F067A652709466C000369E9 /* ChaptersView.swift */,
-				4F067A6927094F50000369E9 /* ChatBubbleOther.swift */,
-				4F5E3B51270B6CC200934FB8 /* ChatBubbleSelf.swift */,
-				4FCB7EBD26FFD7F800B99F76 /* ContentView.swift */,
-				4FCB7EC926FFD85E00B99F76 /* Conversation.swift */,
-				4FCB7ECD26FFDEF300B99F76 /* ConversationModel.swift */,
-				4F94DB99271B69BC00169A5C /* ConversationState.swift */,
-				4FCB7ECF26FFE28F00B99F76 /* ConversationView.swift */,
-				4FCB7EBB26FFD7F800B99F76 /* DatingSim2021App.swift */,
-				4F3DC4D2271262CA0050A455 /* GameModel.swift */,
-				4F3DC4D4271267BE0050A455 /* GameState.swift */,
-				4F3DC4D6271271280050A455 /* GameStateView.swift */,
 				4FCB7EC126FFD7F800B99F76 /* Preview Content */,
-				4F94DB9B271B717C00169A5C /* ReView.swift */,
 			);
 			path = DatingSim2021;
 			sourceTree = "<group>";
@@ -110,6 +110,51 @@
 				4FCB7EC226FFD7F800B99F76 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4FCBD59C2738BC7400137BFD /* Chapters */ = {
+			isa = PBXGroup;
+			children = (
+				4FCBD58F2738B86F00137BFD /* ChapterMap.json */,
+				4FCB7ECB26FFDB6100B99F76 /* Chapter1.json */,
+				4F8E64EE2702337E006BE92E /* Chapter2.json */,
+				4FCBD5922738B96A00137BFD /* Chapter3.json */,
+				4FCBD5942738BAF600137BFD /* SeanWin.json */,
+				4FCBD5962738BB0300137BFD /* AspenWin.json */,
+				4FCBD5982738BB1000137BFD /* EvanWin.json */,
+				4FCBD59A2738BC1A00137BFD /* Lose.json */,
+			);
+			path = Chapters;
+			sourceTree = "<group>";
+		};
+		4FCBD59D2738BCD600137BFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FCB7EBB26FFD7F800B99F76 /* DatingSim2021App.swift */,
+				4FCB7ECF26FFE28F00B99F76 /* ConversationView.swift */,
+				4FCB7EBD26FFD7F800B99F76 /* ContentView.swift */,
+				4F94DB9B271B717C00169A5C /* ReView.swift */,
+				4F5E3B51270B6CC200934FB8 /* ChatBubbleSelf.swift */,
+				4F067A6927094F50000369E9 /* ChatBubbleOther.swift */,
+				4F067A6727094828000369E9 /* ChapterRow.swift */,
+				4F067A652709466C000369E9 /* ChaptersView.swift */,
+				4F3DC4D6271271280050A455 /* GameStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4FCBD59E2738BD2A00137BFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F067A612709427F000369E9 /* ChaptersModel.swift */,
+				4FCB7EC926FFD85E00B99F76 /* Conversation.swift */,
+				4FCB7ECD26FFDEF300B99F76 /* ConversationModel.swift */,
+				4F94DB99271B69BC00169A5C /* ConversationState.swift */,
+				4F3DC4D2271262CA0050A455 /* GameModel.swift */,
+				4F3DC4D4271267BE0050A455 /* GameState.swift */,
+				4FCBD58D2738B77000137BFD /* NextChapter.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,8 +215,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCBD5952738BAF600137BFD /* SeanWin.json in Resources */,
+				4FCBD5992738BB1000137BFD /* EvanWin.json in Resources */,
 				4FCB7ECC26FFDB6100B99F76 /* Chapter1.json in Resources */,
+				4FCBD5972738BB0300137BFD /* AspenWin.json in Resources */,
+				4FCBD59B2738BC1A00137BFD /* Lose.json in Resources */,
 				4FCB7EC326FFD7F800B99F76 /* Preview Assets.xcassets in Resources */,
+				4FCBD5902738B86F00137BFD /* ChapterMap.json in Resources */,
+				4FCBD5932738B96A00137BFD /* Chapter3.json in Resources */,
 				4F8E64EF2702337E006BE92E /* Chapter2.json in Resources */,
 				4FCB7EC026FFD7F800B99F76 /* Assets.xcassets in Resources */,
 			);
@@ -186,6 +237,7 @@
 			files = (
 				4FCB7ECA26FFD85E00B99F76 /* Conversation.swift in Sources */,
 				4F067A622709427F000369E9 /* ChaptersModel.swift in Sources */,
+				4FCBD58E2738B77000137BFD /* NextChapter.swift in Sources */,
 				4F067A6827094828000369E9 /* ChapterRow.swift in Sources */,
 				4F94DB9C271B717C00169A5C /* ReView.swift in Sources */,
 				4F3DC4D7271271280050A455 /* GameStateView.swift in Sources */,

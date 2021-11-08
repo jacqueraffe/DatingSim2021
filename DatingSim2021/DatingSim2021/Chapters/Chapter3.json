@@ -1,0 +1,26 @@
+
+{"nodes" : {
+    "start" : {"prompt" : "Which character",
+        "choices" : [
+            {"label" : "Sean",
+                "destination" : "end",
+                "affectionPoint" : 1,
+            },
+            {"label" : "Aspen",
+                "destination" : "end",
+                "affectionPoint" : 2,
+            },
+            {"label" : "Evan",
+                "destination" : "end",
+                "affectionPoint" : 3,
+            },
+            {"label" : "None",
+                "destination" : "end",
+                "affectionPoint" : 0,
+            }
+        ]
+    }
+    
+}
+    
+}

@@ -1,0 +1,14 @@
+
+{ "Chapter1" : [{"seanMin" : 0, "aspenMin" : 0,"evanMin" : 0, "nextChapterName" : "Chapter2"}],
+    "Chapter2" : [{"seanMin" : 0, "aspenMin" : 0,"evanMin" : 0, "nextChapterName" : "Chapter3"}],
+    "Chapter3" : [{"seanMin" : 1, "aspenMin" : 0,"evanMin" : 0, "nextChapterName" : "SeanWin"},
+        {"seanMin" : 0, "aspenMin" : 1,"evanMin" : 0, "nextChapterName" : "AspenWin"},
+        {"seanMin" : 0, "aspenMin" : 0,"evanMin" : 1, "nextChapterName" : "EvanWin"},
+        {"seanMin" : 0, "aspenMin" : 0,"evanMin" : 0, "nextChapterName" : "Lose"}],
+    
+    "SeanWin" : [],
+    "AspenWin" : [],
+    "EvanWin" : [],
+    "Lose" : []
+    
+}

@@ -9,7 +9,6 @@ import Foundation
 
 public class GameModel : ObservableObject {
     
-    
     private static var documentsFolder: URL {
         do {
             return try FileManager.default.url(for: .documentDirectory,
@@ -37,18 +36,14 @@ public class GameModel : ObservableObject {
     }
     
     func load() {
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            guard let data = try? Data(contentsOf: Self.fileURL) else {
-                return
-            }
-            guard let gameState = try? JSONDecoder().decode(GameState.self, from: data) else {
-                fatalError("Can't decode saved game data.")
-            }
-            DispatchQueue.main.async {
-                self?.gameState = gameState
-                self?.conversationModel = ConversationModel(gameModel: self!)
-            }
+        guard let data = try? Data(contentsOf: Self.fileURL) else {
+            return
         }
+        guard let gameState = try? JSONDecoder().decode(GameState.self, from: data) else {
+            fatalError("Can't decode saved game data.")
+        }
+        self.gameState = gameState
+                conversationModel = ConversationModel(gameModel: self)
     }
     
     func save() {

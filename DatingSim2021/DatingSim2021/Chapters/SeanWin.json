@@ -1,0 +1,19 @@
+
+{"nodes" : {
+    "start" : {"prompt" : "Congrats you marry Sean",
+        "choices" : [
+            {"label" : "Woot woot",
+                "destination" : "end",
+                "affectionPoint" : 1,
+            },
+            {"label" : "noooo",
+                "destination" : "end",
+                "affectionPoint" : 0,
+            }
+            
+        ]
+    }
+    
+}
+    
+}

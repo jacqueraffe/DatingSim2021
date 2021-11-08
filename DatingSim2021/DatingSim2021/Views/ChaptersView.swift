@@ -11,7 +11,7 @@ struct ChaptersView: View {
     @ObservedObject
     var gameModel : GameModel
     @StateObject private var chapters = ChaptersModel(chapters: [
-        "Chapter1", "Chapter2"])
+        "Chapter1", "Chapter2", "Chapter3", "SeanWin", "AspenWin", "EvanWin", "Lose"])
     @State private var selection: String? = nil
     var body: some View {
         VStack{
