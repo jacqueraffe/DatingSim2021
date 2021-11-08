@@ -24,6 +24,8 @@ struct Conversation : Codable {
         var label : String
         // name of the node to go to if the user clicks this choice
         var destination : Tag
+        // 0 : none of them 1 : Sean 2 : Aspen 3 : Evan
+        var affectionPoint : Int
     }
 
     // all the different conversation points in one conversation

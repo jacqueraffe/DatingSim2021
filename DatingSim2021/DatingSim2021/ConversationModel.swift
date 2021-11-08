@@ -31,10 +31,18 @@ public class ConversationModel : ObservableObject {
         // go to the next node in the graph
         let currentNode = conversation.nodes[gameModel.gameState.currentConversation.currentNodeTag]!
         let destination = currentNode.choices[choice].destination
+        let affectionPoint = currentNode.choices[choice].affectionPoint
         //history is an array, take curr node, add to history
         //erasing info, so good place to update history node
         gameModel.gameState.currentConversation.history.append(Conversation.Exchange(id: gameModel.gameState.currentConversation.history.count, prompt: currentNode.prompt, choiceLabel: currentNode.choices[choice].label))
         gameModel.gameState.currentConversation.currentNodeTag = destination
+        if affectionPoint == 1 {
+            gameModel.gameState.sean += 1
+        } else if affectionPoint == 2 {
+            gameModel.gameState.aspen += 1
+        } else if affectionPoint == 3 {
+            gameModel.gameState.evan += 1
+        }
     }
 }
 

@@ -3,9 +3,12 @@
     "start" : {"prompt" : "Lawyer: Hello ma'am, I am your uncle's lawyer. The reading of the will will commence shortly. Please wait here. Your uncle was very involved in the community, yet had no children, so many people are interested in who he will leave his massive fortune to.",
         "choices" : [
             {"label" : "I am curious too...",
-                "destination" : "later"},
+                "destination" : "later",
+                "affectionPoint" : 0,
+            },
             {"label" : "I hope that there won't be a fight over the money",
-                "destination" : "fight"
+                "destination" : "fight",
+                "affectionPoint" : 0,
             }
         ]
     },
@@ -13,7 +16,8 @@
     "fight" : {"prompt" : "Don't worry, the will's legitamacy is bulletproof, there won't be any disputes that hold legal ground",
         "choices" : [
             {"label" : "Ok. Thank You",
-                "destination" : "later"
+                "destination" : "later",
+                "affectionPoint" : 0,
             }
         ]
     },
@@ -21,15 +25,21 @@
     "later" :{"prompt" : "A half an hour later... Lawyer: I hereby nominate, constitute and appoint my beloved niece, Y/N, to act as the Executor of this my Last Will and Testament on the condition she gets married before receiving the money. In the event that Y/N shall predecease me or chooses not to act for any reason, I  nominate and appoint (Lawyer) to donate my money in the ways that I already have outlined to him. And considering Y/N is still alive, I'm assuming that you will take on the money?",
         "choices" : [
         {"label": "I guess... But what was the condition again?",
-            "destination" : "wish"},
+            "destination" : "wish",
+            "affectionPoint" : 0,
+        },
         {"label" : "What kind of condition is needing to be married? Can he even do that?",
-            "destination" : "wish"}
+            "destination" : "wish",
+            "affectionPoint" : 0,
+        }
         ]
     },
     "wish" : {"prompt": "Lawyer: Your Uncle's dying wish is that you wouldn't spend life lonely like him. He also wants you to have someone who can help you manage the money.",
         "choices" : [
             {"label" : "Wow, he must've been really lonely then",
-                "destination" : "end"}
+                "destination" : "end",
+                "affectionPoint" : 0,
+            }
         ]
     }
     
