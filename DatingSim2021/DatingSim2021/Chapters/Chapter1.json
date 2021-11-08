@@ -2,9 +2,9 @@
 {"nodes" : {
     "start" : {"prompt" : "HCW1: hey, your uncle's condition suddenly got worse while you were away at work. He passed away today peacefully at 12:45.",
         "choices" : [
-            { "label" : "What? How could this have happened, it seemed like he was doing fine. [should increase evan by 1]",
+            { "label" : "What? How could this have happened, it seemed like he was doing fine.",
                 "destination" : "sometimesHappens",
-                "affectionPoint" : 1,
+                "affectionPoint" : 0,
             },
             {"label" : "Oh no! what happens now?" ,
                 "destination" : "duties",

@@ -17,13 +17,20 @@ struct ChaptersView: View {
         VStack{
             GameStateView(gameState: gameModel.gameState)
             //chapters are identified by their name
-            List(chapters.chapters, id: \.self){ chapter in
+            List(visibleChapters, id: \.self){ chapter in
                 NavigationLink(destination: chapterView(of: chapter)) {
                     ChapterRow(chapterName: chapter)
                 }
             }
         }.onChange(of: gameModel.gameState.chapter){ chapter in
             selection = chapter
+        }
+    }
+    
+    private var visibleChapters : [String] {
+        chapters.chapters.filter{ chapter in
+            chapter == gameModel.gameState.currentChapterName ||
+            gameModel.gameState.visitedChapters.contains(chapter)
         }
     }
     
