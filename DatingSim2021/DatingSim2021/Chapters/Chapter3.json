@@ -1,6 +1,6 @@
 
 {"nodes" : {
-    "start" : {"prompt" : "Which character",
+    "start" : {"prompt" : ["Which character"],
         "choices" : [
             {"label" : "Sean",
                 "destination" : "end",

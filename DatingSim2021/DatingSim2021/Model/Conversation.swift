@@ -14,7 +14,7 @@ struct Conversation : Codable {
     // one interaction point
     struct Node : Codable{
         // what the character(s)) will say to the user
-        var prompt : String
+        var prompt : [String]
         // what the user can choose to respond with
         var choices : [Choice] //array<choice>
     }
@@ -38,7 +38,7 @@ struct Conversation : Codable {
     typealias History = [Exchange]
     struct Exchange : Identifiable, Codable, Equatable {
         var id : Int
-        var prompt : String
+        var prompt : [String]
         var choiceLabel : String
     }
 

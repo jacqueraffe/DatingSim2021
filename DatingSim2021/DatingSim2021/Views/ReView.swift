@@ -22,7 +22,9 @@ struct ReView: View {
     private var historyView: some View{
         ForEach(history ){exchange in
             VStack{
-                ChatBubbleOther(text: exchange.prompt)
+                ForEach(exchange.prompt, id: \.self ){truck in
+                ChatBubbleOther(text: truck)
+                }
                 ChatBubbleSelf(text: exchange.choiceLabel)
             }
         }

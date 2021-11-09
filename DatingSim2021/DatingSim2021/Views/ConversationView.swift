@@ -43,7 +43,9 @@ struct ConversationView: View {
     private var history: some View{
         ForEach(conversationModel.gameModel.gameState.currentConversation.history ){exchange in
             VStack{
-                ChatBubbleOther(text: exchange.prompt)
+                ForEach(exchange.prompt, id: \.self ){truck in
+                ChatBubbleOther(text: truck)
+                }
                 ChatBubbleSelf(text: exchange.choiceLabel)
             }
         }
@@ -52,7 +54,9 @@ struct ConversationView: View {
     @ViewBuilder
     private var current: some View {
         if let node = conversationModel.currentNode {
-            ChatBubbleOther(text: node.prompt)
+            ForEach(node.prompt, id: \.self ){truck in
+            ChatBubbleOther(text: truck)
+            }
             let choices = node.choices
             ForEach(node.choices) { choice in
                 Button(choice.label){

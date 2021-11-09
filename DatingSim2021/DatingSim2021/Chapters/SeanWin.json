@@ -1,6 +1,6 @@
 
 {"nodes" : {
-    "start" : {"prompt" : "Congrats you marry Sean",
+    "start" : {"prompt" : ["Congrats you marry Sean"],
         "choices" : [
             {"label" : "Woot woot",
                 "destination" : "end",

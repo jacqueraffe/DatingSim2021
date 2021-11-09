@@ -1,6 +1,6 @@
 
 {"nodes" : {
-    "start" : {"prompt" : "Too bad, you dont get the money but at least you dont have to marry anyone.",
+    "start" : {"prompt" : ["Too bad, you dont get the money but at least you dont have to marry anyone."],
         "choices" : [
             {"label" : "Woot woot",
                 "destination" : "end",
